@@ -15,6 +15,7 @@
 		B4FC32AF250DF08100C725A8 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3276250DED0200C725A8 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4FC32B4250E645C00C725A8 /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC32B3250E645C00C725A8 /* RemoteAddAccount.swift */; };
 		B4FC32B6250E653D00C725A8 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC32B5250E653D00C725A8 /* HttpPostClient.swift */; };
+		B4FC32B8250E665B00C725A8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC32B7250E665B00C725A8 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		B4FC32A5250DF03C00C725A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4FC32B3250E645C00C725A8 /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		B4FC32B5250E653D00C725A8 /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
+		B4FC32B7250E665B00C725A8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				B4FC3280250DEE2700C725A8 /* AddAccount.swift */,
 				B4FC3282250DEF7400C725A8 /* AccountModel.swift */,
 				B4FC3279250DED0200C725A8 /* Info.plist */,
+				B4FC32B7250E665B00C725A8 /* Model.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FC32B8250E665B00C725A8 /* Model.swift in Sources */,
 				B4FC3281250DEE2700C725A8 /* AddAccount.swift in Sources */,
 				B4FC3283250DEF7400C725A8 /* AccountModel.swift in Sources */,
 			);

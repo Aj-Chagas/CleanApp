@@ -12,7 +12,7 @@ public protocol AddAccount {
     func add(addAccountModel: AddAccountModel, completion: Result<AccountModel, Error>)
 }
 
-public struct AddAccountModel : Encodable {
+public struct AddAccountModel: Model {
     public var name: String
     public var email: String
     public var password: String
@@ -26,9 +26,4 @@ public struct AddAccountModel : Encodable {
     }
 }
 
-public extension AddAccountModel{
-    func toData() -> Data? {
-        let data = try? JSONEncoder().encode(self)
-        return data
-    }
-}
+
