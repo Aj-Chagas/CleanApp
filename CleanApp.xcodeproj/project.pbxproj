@@ -10,8 +10,7 @@
 		B4FC3281250DEE2700C725A8 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3280250DEE2700C725A8 /* AddAccount.swift */; };
 		B4FC3283250DEF7400C725A8 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3282250DEF7400C725A8 /* AccountModel.swift */; };
 		B4FC329F250DF03C00C725A8 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3296250DF03B00C725A8 /* Data.framework */; };
-		B4FC32A4250DF03C00C725A8 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC32A3250DF03C00C725A8 /* DataTests.swift */; };
-		B4FC32A6250DF03C00C725A8 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = B4FC3298250DF03C00C725A8 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4FC32A4250DF03C00C725A8 /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC32A3250DF03C00C725A8 /* RemoteAddAccountTests.swift */; };
 		B4FC32AE250DF08100C725A8 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3276250DED0200C725A8 /* Domain.framework */; };
 		B4FC32AF250DF08100C725A8 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3276250DED0200C725A8 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -53,10 +52,9 @@
 		B4FC3280250DEE2700C725A8 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
 		B4FC3282250DEF7400C725A8 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		B4FC3296250DF03B00C725A8 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4FC3298250DF03C00C725A8 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		B4FC3299250DF03C00C725A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4FC329E250DF03C00C725A8 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4FC32A3250DF03C00C725A8 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
+		B4FC32A3250DF03C00C725A8 /* RemoteAddAccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTests.swift; sourceTree = "<group>"; };
 		B4FC32A5250DF03C00C725A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +119,6 @@
 		B4FC3297250DF03C00C725A8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B4FC3298250DF03C00C725A8 /* Data.h */,
 				B4FC3299250DF03C00C725A8 /* Info.plist */,
 			);
 			path = Data;
@@ -130,7 +127,7 @@
 		B4FC32A2250DF03C00C725A8 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				B4FC32A3250DF03C00C725A8 /* DataTests.swift */,
+				B4FC32A3250DF03C00C725A8 /* RemoteAddAccountTests.swift */,
 				B4FC32A5250DF03C00C725A8 /* Info.plist */,
 			);
 			path = DataTests;
@@ -157,7 +154,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4FC32A6250DF03C00C725A8 /* Data.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4FC32A4250DF03C00C725A8 /* DataTests.swift in Sources */,
+				B4FC32A4250DF03C00C725A8 /* RemoteAddAccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
