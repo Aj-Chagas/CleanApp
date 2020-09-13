@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol AddAccount {
-    func add(addAccountModel: AddAccountModel, completion: Result<AccountModel, Error>)
+public protocol AddAccount {
+    public func add(addAccountModel: AddAccountModel, completion: Result<AccountModel, Error>)
 }
 
-struct AddAccountModel {
-    var name: String
-    var email: String
-    var password: String
-    var passwordConfirmation: String
+public struct AddAccountModel {
+    public var name: String
+    public var email: String
+    public var password: String
+    public var passwordConfirmation: String
 }
