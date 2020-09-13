@@ -28,7 +28,7 @@ protocol HttpPostClient {
     func post(to url: URL, with: Data?)
 }
 
-class DataTests: XCTestCase {
+class RemoteAddAccountTests: XCTestCase {
 
     func test_add_should_call_httpClient_with_correct_url() {
         let url = URL(string: "http://any-url.com")!
