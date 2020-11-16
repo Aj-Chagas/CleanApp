@@ -28,6 +28,9 @@ class RemoteAddAccountTests: XCTestCase {
 }
 
 extension RemoteAddAccountTests {
+    
+    // Foi retornado uma tupla, pois tanto a instancia do remoteAddAccount, quanto o HttpclientSpy são necessárias para os testes
+    
     func makeSut(url: URL = URL(string: "http://any-url.com")!) -> (sut: RemoteAddAccount, httpClientSpy: HttpClientSpy ){
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
