@@ -13,7 +13,7 @@ import Data
 class RemoteAddAccountTests: XCTestCase {
 
     func test_add_should_call_httpClient_with_correct_url() {
-        let url = URL(string: "http://any-url.com")!
+        let url = makeUrl()
         let (sut, httpClientSpy) = makeSut(url: url)
         sut.add(addAccountModel: makeAddAccountModel()) { _ in }
         XCTAssertEqual(httpClientSpy.urls, [url])
@@ -44,7 +44,7 @@ class RemoteAddAccountTests: XCTestCase {
     func test_add_should_complete_with_error_if_client_completes_with_invalid_data() {
         let (sut, httpClientSpy) = makeSut()
         expect(sut, expectedResult: .failure(.unexpected), when: {
-            httpClientSpy.completionWithData(Data("invalid_data".utf8))
+            httpClientSpy.completionWithData(makeInvalidData())
         })
     }
 }
@@ -57,18 +57,26 @@ extension RemoteAddAccountTests {
         return (sut, httpClientSpy)
     }
     
-    func expect(_ sut: RemoteAddAccount, expectedResult: Result<AccountModel, DomainError>, when action: () -> Void) {
+    func expect(_ sut: RemoteAddAccount, expectedResult: Result<AccountModel, DomainError>, when action: () -> Void,  file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "waiting")
         sut.add(addAccountModel: makeAddAccountModel()) { receivedResult in
             switch (expectedResult, receivedResult) {
-            case(.failure(let expectedError), .failure(let receivedError)): XCTAssertEqual(expectedError, receivedError)
-            case(.success(let expectedAccount), .success(let receivedAccount)): XCTAssertEqual(expectedAccount, receivedAccount)
-            default: XCTFail("Expected \(expectedResult) received \(receivedResult) instead")
+            case(.failure(let expectedError), .failure(let receivedError)): XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+            case(.success(let expectedAccount), .success(let receivedAccount)): XCTAssertEqual(expectedAccount, receivedAccount, file: file, line: line)
+            default: XCTFail("Expected \(expectedResult) received \(receivedResult) instead", file: file, line: line)
             }
             exp.fulfill()
         }
         action()
         wait(for: [exp], timeout: 1)
+    }
+    
+    func makeInvalidData() -> Data {
+        Data("invalid_data".utf8)
+    }
+    
+    func makeUrl() -> URL {
+        URL(string: "http://any-url.com")!
     }
     
     func makeAddAccountModel() -> AddAccountModel {
