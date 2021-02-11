@@ -18,6 +18,7 @@
 		B4A5F84425CF298E000087EC /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3296250DF03B00C725A8 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4A5F84825CF299D000087EC /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F81725CCBA1B000087EC /* TestFactories.swift */; };
 		B4A5F85425CF2AA6000087EC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4A5F85325CF2AA6000087EC /* Alamofire */; };
+		B4BF0F7F25D5F1820036E842 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80625CCB84A000087EC /* TestExtensions.swift */; };
 		B4D0F703256334AF0071785A /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0F702256334AF0071785A /* DomainError.swift */; };
 		B4D0F7052563368B0071785A /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0F7042563368B0071785A /* HttpError.swift */; };
 		B4FC3281250DEE2700C725A8 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3280250DEE2700C725A8 /* AddAccount.swift */; };
@@ -545,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A5F84825CF299D000087EC /* TestFactories.swift in Sources */,
+				B4BF0F7F25D5F1820036E842 /* TestExtensions.swift in Sources */,
 				B4A5F83625CF2988000087EC /* AlamofireAdapterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
