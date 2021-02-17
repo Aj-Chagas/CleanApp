@@ -19,3 +19,7 @@ func makeValidData() -> Data {
 func makeUrl() -> URL {
     URL(string: "http://any-url.com")!
 }
+
+func makeError() -> NSError {
+    NSError(domain: "any_erroe", code: 0)
+}
