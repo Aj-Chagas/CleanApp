@@ -20,9 +20,10 @@ class AlamofireAdapter {
     
     func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpError>) -> Void){
         session.request(url, method: .post, parameters: data?.toJson()).responseData { dataResponse in
+            guard dataResponse.response?.statusCode != nil else { return completion(.failure(.noConnectivity)) }
             switch dataResponse.result {
             case .failure: completion(.failure(.noConnectivity))
-            case .success: break
+            case .success(let data): completion(.success(data))
             }
         }
     }
@@ -50,18 +51,24 @@ class AlamofireAdapterTest: XCTestCase {
         expectResult(.failure(.noConnectivity), when: (data: nil, response: nil, error: makeError()))
     }
     
-    
-
+    func test_post_should_complete_with_error_on_all_ivalid_cases() {
+        expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: makeHttpResponse(), error: makeError()))
+        expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: nil, error: makeError()))
+        expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: nil, error: nil))
+        expectResult(.failure(.noConnectivity), when: (data: nil, response: makeHttpResponse(), error: makeError()))
+        expectResult(.failure(.noConnectivity), when: (data: nil, response: makeHttpResponse(), error: nil))
+        expectResult(.failure(.noConnectivity), when: (data: nil, response: nil, error: nil))
+    }
 }
 
 extension AlamofireAdapterTest {
     
-    func makeSut() -> AlamofireAdapter {
+    func makeSut(file: StaticString = #filePath, line: UInt = #line) -> AlamofireAdapter {
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = Session(configuration: configuration)
         let sut = AlamofireAdapter(session: session)
-        checkMemoryLeak(for: sut)
+        checkMemoryLeak(for: sut, file: file, line: line)
         return sut
     }
     
@@ -75,14 +82,14 @@ extension AlamofireAdapterTest {
         action(request!)
     }
     
-    func expectResult(_ expectedResult: Result<Data, HttpError>, when stub: (data: Data?, response: HTTPURLResponse?, error: Error?)) {
+    func expectResult(_ expectedResult: Result<Data, HttpError>, when stub: (data: Data?, response: HTTPURLResponse?, error: Error?), file: StaticString = #filePath, line: UInt = #line) {
         let sut = makeSut()
         URLProtocolStub.simulate(data: stub.data, response: stub.response, error: stub.error)
         let exp = expectation(description: "waiting")
         sut.post(to: makeUrl(), with: makeInvalidData()) { receivedResult in
             switch (expectedResult, receivedResult) {
-            case (.failure(let expectedError), .failure(let receivedError)) : XCTAssertEqual(expectedError, receivedError)
-            case (.success(let expectedSuccess), .success(let receivedSuccess)): XCTAssertEqual(expectedSuccess, receivedSuccess)
+            case (.failure(let expectedError), .failure(let receivedError)) : XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+            case (.success(let expectedSuccess), .success(let receivedSuccess)): XCTAssertEqual(expectedSuccess, receivedSuccess, file: file, line: line)
             default: XCTFail("expected \(expectedResult) got \(receivedResult) instead ")
             }
             exp.fulfill()
