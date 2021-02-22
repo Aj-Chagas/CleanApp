@@ -51,10 +51,12 @@ class AlamofireAdapterTest: XCTestCase {
         expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 599), error: nil))
         expectResult(.failure(.unauthorized), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 401), error: nil))
         expectResult(.failure(.forbideen), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 403), error: nil))
+        expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 300), error: nil))
+        expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 100), error: nil))
         
     }
     
-    func test_post_should_complete_with_error_on_all_ivalid_cases() {
+    func test_post_should_complete_with_error_on_all_valid_cases() {
         expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: makeHttpResponse(), error: makeError()))
         expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: nil, error: makeError()))
         expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: nil, error: nil))
@@ -100,22 +102,3 @@ extension AlamofireAdapterTest {
         wait(for: [exp], timeout: 1)
     }
 }
-
-/*
- Esses são todo os casos que podem vir em um request, o alamofire já garante esse tratamento, por exemplo no caso de vir data, response e error, esse cenário deve retornar um erro, para a gente garantir isso, fazemos esses teste para ter certeza que o alamofire está realmente garantindo isso pra gente.
- 
- Para cobrir esses testes a gente cria tres variaveis(data, request e error) na urlProtocolStub
- 
- data response error. Validos
- ok     ok      x
- x      x       ok
- 
-                    invalido
- ok     ok      ok
- ok     x       ok
- ok     x       x
- x      ok      ok
- x      ok      x
- x      x       x
-    
- */
