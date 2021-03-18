@@ -253,8 +253,7 @@
 		B4A5F83425CF2988000087EC /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
-				B4A5F83525CF2988000087EC /* AlamofireAdapterTest.swift */,
-				B40BA18525E4687500EECB06 /* URLProtocolStub.swift */,
+				B4FA685C26039C1500804361 /* Http */,
 				B4A5F83725CF2988000087EC /* Info.plist */,
 			);
 			path = InfraTests;
@@ -266,6 +265,15 @@
 				B4D0F702256334AF0071785A /* DomainError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		B4FA685C26039C1500804361 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				B4A5F83525CF2988000087EC /* AlamofireAdapterTest.swift */,
+				B40BA18525E4687500EECB06 /* URLProtocolStub.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		B4FC325C250DECB100C725A8 = {
