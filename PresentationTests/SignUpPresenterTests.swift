@@ -92,8 +92,11 @@ extension SignUpPresenterTests {
 
     func makeSut(alertViewSpy: AlertViewSpy = AlertViewSpy(),
                  emailValidatorSpy: EmailValidatorSpy = EmailValidatorSpy(),
-                 addAccountSpy: AddAccountSpy = AddAccountSpy()) -> SignUpPresenter {
-        return SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy, addAccount: addAccountSpy)
+                 addAccountSpy: AddAccountSpy = AddAccountSpy(),
+                 file: StaticString = #filePath, line: UInt = #line) -> SignUpPresenter {
+        let sut = SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy, addAccount: addAccountSpy)
+        checkMemoryLeak(for: sut, file: file, line: line)
+        return sut
     }
     
     func makeSignupViewModel(name: String? = "any_name",
