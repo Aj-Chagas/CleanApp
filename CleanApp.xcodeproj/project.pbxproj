@@ -34,6 +34,7 @@
 		B4FBBC672612641D00E66D8E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3296250DF03B00C725A8 /* Data.framework */; };
 		B4FBBC682612641D00E66D8E /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3296250DF03B00C725A8 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4FBBC76261265E300E66D8E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F81B25CCBA3B000087EC /* AccountModelFactory.swift */; };
+		B4FBBC7C2612692000E66D8E /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80625CCB84A000087EC /* TestExtensions.swift */; };
 		B4FC3281250DEE2700C725A8 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3280250DEE2700C725A8 /* AddAccount.swift */; };
 		B4FC3283250DEF7400C725A8 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3282250DEF7400C725A8 /* AccountModel.swift */; };
 		B4FC329F250DF03C00C725A8 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3296250DF03B00C725A8 /* Data.framework */; };
@@ -850,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4FBBC76261265E300E66D8E /* AccountModelFactory.swift in Sources */,
+				B4FBBC7C2612692000E66D8E /* TestExtensions.swift in Sources */,
 				B4FA687826039CEA00804361 /* SignUpPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

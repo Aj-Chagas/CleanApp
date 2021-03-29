@@ -77,6 +77,15 @@ class SignUpPresenterTests: XCTestCase {
         XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel())
     }
 
+    func test_signUp_should_show_error_message_if_addAccount_fails() {
+        let alertViewSpy = AlertViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy, addAccountSpy: addAccountSpy)
+        sut.signUp(viewModel: makeSignupViewModel())
+        addAccountSpy.completionWithError()
+        XCTAssertEqual(alertViewSpy.viewModel, makeErrorAlertViewModel(message: "Algo inesperado aconteceu, tente novamente em alguns instantes."))
+    }
+
 }
 
 extension SignUpPresenterTests {
@@ -84,7 +93,7 @@ extension SignUpPresenterTests {
     func makeSut(alertViewSpy: AlertViewSpy = AlertViewSpy(),
                  emailValidatorSpy: EmailValidatorSpy = EmailValidatorSpy(),
                  addAccountSpy: AddAccountSpy = AddAccountSpy()) -> SignUpPresenter {
-        SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy, addAccount: addAccountSpy)
+        return SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy, addAccount: addAccountSpy)
     }
     
     func makeSignupViewModel(name: String? = "any_name",
@@ -92,6 +101,10 @@ extension SignUpPresenterTests {
                              password: String? = "any_password",
                              passwordConfirmation: String? = "any_password") -> SignUpViewModel {
         SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
+    }
+    
+    func makeErrorAlertViewModel(message: String) -> AlertViewModel {
+        AlertViewModel(title: "Erro", message: message)
     }
     
     func makeRequiredAlertViewModel(fieldName: String) -> AlertViewModel {
@@ -127,9 +140,15 @@ extension SignUpPresenterTests {
     class AddAccountSpy: AddAccount {
         
         var addAccountModel: AddAccountModel?
+        var completion: ((Result<AccountModel, DomainError>) -> Void)?
         
         func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
             self.addAccountModel = addAccountModel
+            self.completion = completion
+        }
+        
+        func completionWithError() {
+            completion?(.failure(.unexpected))
         }
     }
 }
