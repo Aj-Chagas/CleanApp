@@ -12,65 +12,85 @@ import Presentation
 class SignUpPresenterTests: XCTestCase {
 
     func test_signUp_should_show_error_message_if_name_is_not_provided() {
-        let (sut, alertViewSpy, _) = makeSut()
-        let signUpViewModel = SignUpViewModel(email: "any_email@gmail.com", password: "any_password", passwordConfirmation: "any_password")
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy)
+        let signUpViewModel = makeSignupViewModel(name: nil)
         sut.signUp(viewModel: signUpViewModel)
-        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "O campo Nome é obrigatório"))
+        XCTAssertEqual(alertViewSpy.viewModel, makeRequiredAlertViewModel(fieldName: "Nome"))
     }
     
     func test_signUp_should_show_error_message_if_email_is_not_provided() {
-        let (sut, alertViewSpy, _) = makeSut()
-        let signUpViewModel = SignUpViewModel(name: "any_name", password: "any_password", passwordConfirmation: "any_password")
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy)
+        let signUpViewModel = makeSignupViewModel(email: nil)
         sut.signUp(viewModel: signUpViewModel)
-        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "O campo Email é obrigatório"))
+        XCTAssertEqual(alertViewSpy.viewModel, makeRequiredAlertViewModel(fieldName: "Email"))
     }
     
     func test_signUp_should_show_error_message_if_password_is_not_provided() {
-        let (sut, alertViewSpy, _) = makeSut()
-        let signUpViewModel = SignUpViewModel(name: "any_name", email: "any_email@gmail.com", passwordConfirmation: "any_password")
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy)
+        let signUpViewModel = makeSignupViewModel(password: nil)
         sut.signUp(viewModel: signUpViewModel)
-        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "O campo Senha é obrigatório"))
+        XCTAssertEqual(alertViewSpy.viewModel, makeRequiredAlertViewModel(fieldName: "Senha"))
     }
     
     func test_signUp_should_show_error_message_if_password_confirmation_is_not_provided() {
-        let (sut, alertViewSpy, _) = makeSut()
-        let signUpViewModel = SignUpViewModel(name: "any_name", email: "any_email@gmail.com", password: "any_password")
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy)
+        let signUpViewModel = makeSignupViewModel(passwordConfirmation: nil)
         sut.signUp(viewModel: signUpViewModel)
-        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "O campo Confirmar Senha é obrigatório"))
+        XCTAssertEqual(alertViewSpy.viewModel, makeRequiredAlertViewModel(fieldName: "Confirmar Senha"))
     }
     
     func test_signUp_should_show_error_message_if_password_confirmation_not_match() {
-        let (sut, alertViewSpy, _) = makeSut()
-        let signUpViewModel = SignUpViewModel(name: "any_name", email: "any_email@gmail.com", password: "any_password", passwordConfirmation: "wrong_password")
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy)
+        let signUpViewModel = makeSignupViewModel(password: "any_password", passwordConfirmation: "wrong_password")
         sut.signUp(viewModel: signUpViewModel)
-        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "Falha ao confirmar senha"))
-    }
-    
-    func test_signUp_should_call_emailValidator_with_correct_email() {
-        let (sut, _, emailValidatorSpy) = makeSut()
-        let signUpViewModel = SignUpViewModel(name: "any_name", email: "invalid_email@gmail.com", password: "any_password", passwordConfirmation: "any_password")
-        sut.signUp(viewModel: signUpViewModel)
-        XCTAssertEqual(emailValidatorSpy.email, signUpViewModel.email)
+        XCTAssertEqual(alertViewSpy.viewModel, makeInvalidAlertViewModel(fieldName: "Confirmar Senha"))
     }
     
     func test_signUp_should_show_error_message_if_invalid_email_is_provided() {
-        let (sut, alertViewSpy, emailValidatorSpy) = makeSut()
-        let signUpViewModel = SignUpViewModel(name: "any_name", email: "invalid_email@gmail.com", password: "any_password", passwordConfirmation: "any_password")
-        emailValidatorSpy.isValid = false
+        let emailValidatorSpy = EmailValidatorSpy()
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy, emailValidatorSpy: emailValidatorSpy)
+        let signUpViewModel = makeSignupViewModel(email: "invalid_email@gmail.com")
+        emailValidatorSpy.simulateInvalidEmail()
         sut.signUp(viewModel: signUpViewModel)
-        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "Email inválido"))
+        XCTAssertEqual(alertViewSpy.viewModel, makeInvalidAlertViewModel(fieldName: "Email"))
+    }
+    
+    func test_signUp_should_call_emailValidator_with_correct_email() {
+        let emailValidatorSpy = EmailValidatorSpy()
+        let sut = makeSut(emailValidatorSpy: emailValidatorSpy)
+        let signUpViewModel = makeSignupViewModel(email: "email@gmail.com")
+        sut.signUp(viewModel: signUpViewModel)
+        XCTAssertEqual(emailValidatorSpy.email, signUpViewModel.email)
     }
 
 }
 
 extension SignUpPresenterTests {
 
-    func makeSut() -> (sut: SignUpPresenter, alertViewSpy: AlertViewSpy, emailValidatorSpy: EmailValidatorSpy){
-        let alertViewSpy = AlertViewSpy()
-        let emailValidatorSpy = EmailValidatorSpy()
-        let sut = SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
-        
-        return (sut, alertViewSpy, emailValidatorSpy)
+    func makeSut(alertViewSpy: AlertViewSpy = AlertViewSpy(),
+                 emailValidatorSpy: EmailValidatorSpy = EmailValidatorSpy()) -> SignUpPresenter {
+        SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
+    }
+    
+    func makeSignupViewModel(name: String? = "any_name",
+                             email: String? = "email@gmail.com",
+                             password: String? = "any_password",
+                             passwordConfirmation: String? = "any_password") -> SignUpViewModel {
+        SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
+    }
+    
+    func makeRequiredAlertViewModel(fieldName: String) -> AlertViewModel {
+        AlertViewModel(title: "Falha na validação", message: "O campo \(fieldName) é obrigatório")
+    }
+    
+    func makeInvalidAlertViewModel(fieldName: String) -> AlertViewModel {
+        AlertViewModel(title: "Falha na validação", message: "O campo \(fieldName) é inválido")
     }
 
     class AlertViewSpy: AlertView {
@@ -83,11 +103,15 @@ extension SignUpPresenterTests {
     
     class EmailValidatorSpy: EmailValidator {
         var email: String?
-        var isValid: Bool = true
+        private var isValid: Bool = true
         
         func isValid(email: String) -> Bool {
             self.email = email
             return isValid
+        }
+        
+        func simulateInvalidEmail() {
+            isValid = false
         }
     }
 }
