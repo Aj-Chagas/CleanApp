@@ -26,6 +26,7 @@
 		B4BF0F7F25D5F1820036E842 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80625CCB84A000087EC /* TestExtensions.swift */; };
 		B4D0F703256334AF0071785A /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0F702256334AF0071785A /* DomainError.swift */; };
 		B4D0F7052563368B0071785A /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0F7042563368B0071785A /* HttpError.swift */; };
+		B4D81CCD26137C8A00D8E6FE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D81CCC26137C8A00D8E6FE /* LoadingView.swift */; };
 		B4FA687326039CEA00804361 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FA686A26039CEA00804361 /* Presentation.framework */; };
 		B4FA687826039CEA00804361 /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FA687726039CEA00804361 /* SignUpPresenterTests.swift */; };
 		B4FA68942603AEB700804361 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FA68932603AEB700804361 /* SignUpPresenter.swift */; };
@@ -166,6 +167,7 @@
 		B4A5F83725CF2988000087EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D0F702256334AF0071785A /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		B4D0F7042563368B0071785A /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		B4D81CCC26137C8A00D8E6FE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B4FA686A26039CEA00804361 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FA686D26039CEA00804361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4FA687226039CEA00804361 /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				B4FA68A22603AED900804361 /* AlertView.swift */,
+				B4D81CCC26137C8A00D8E6FE /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -841,6 +844,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4FA68A32603AED900804361 /* AlertView.swift in Sources */,
+				B4D81CCD26137C8A00D8E6FE /* LoadingView.swift in Sources */,
 				B4FA68942603AEB700804361 /* SignUpPresenter.swift in Sources */,
 				B4FA68CB2603B77900804361 /* EmailValidator.swift in Sources */,
 			);
