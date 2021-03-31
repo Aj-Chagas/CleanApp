@@ -117,7 +117,7 @@ class SignUpPresenterTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
-    func test_signUp_should_show_success_message_if_addAccount_succeds() {
+    func test_signUp_should_show_success_message_if_addAccount_succeeds() {
         let alertViewSpy = AlertViewSpy()
         let addAccountSpy = AddAccountSpy()
         let sut = makeSut(alertViewSpy: alertViewSpy, addAccountSpy: addAccountSpy)
