@@ -28,6 +28,7 @@
 		B4D0F7052563368B0071785A /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0F7042563368B0071785A /* HttpError.swift */; };
 		B4D81CCD26137C8A00D8E6FE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D81CCC26137C8A00D8E6FE /* LoadingView.swift */; };
 		B4D81CD4261505C100D8E6FE /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D81CD3261505C100D8E6FE /* SignUpViewModel.swift */; };
+		B4D81CDB26150B1400D8E6FE /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D81CDA26150B1400D8E6FE /* SignUpMapper.swift */; };
 		B4FA687326039CEA00804361 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FA686A26039CEA00804361 /* Presentation.framework */; };
 		B4FA687826039CEA00804361 /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FA687726039CEA00804361 /* SignUpPresenterTests.swift */; };
 		B4FA68942603AEB700804361 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FA68932603AEB700804361 /* SignUpPresenter.swift */; };
@@ -170,6 +171,7 @@
 		B4D0F7042563368B0071785A /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		B4D81CCC26137C8A00D8E6FE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B4D81CD3261505C100D8E6FE /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		B4D81CDA26150B1400D8E6FE /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
 		B4FA686A26039CEA00804361 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FA686D26039CEA00804361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4FA687226039CEA00804361 /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,6 +365,7 @@
 			children = (
 				B4FA68932603AEB700804361 /* SignUpPresenter.swift */,
 				B4D81CD3261505C100D8E6FE /* SignUpViewModel.swift */,
+				B4D81CDA26150B1400D8E6FE /* SignUpMapper.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D81CDB26150B1400D8E6FE /* SignUpMapper.swift in Sources */,
 				B4FA68A32603AED900804361 /* AlertView.swift in Sources */,
 				B4D81CCD26137C8A00D8E6FE /* LoadingView.swift in Sources */,
 				B4D81CD4261505C100D8E6FE /* SignUpViewModel.swift in Sources */,
