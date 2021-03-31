@@ -117,6 +117,20 @@ class SignUpPresenterTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
+    func test_signUp_should_show_success_message_if_addAccount_succeds() {
+        let alertViewSpy = AlertViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy, addAccountSpy: addAccountSpy)
+        let exp = expectation(description: "waiting")
+        alertViewSpy.observer { [weak self] viewModel in
+            XCTAssertEqual(viewModel, self?.makeSuccessAlertViewModel(message: "Conta criada com sucesso."))
+            exp.fulfill()
+        }
+        sut.signUp(viewModel: makeSignupViewModel())
+        addAccountSpy.completionWithAccount(account: makeAccountModel())
+        wait(for: [exp], timeout: 1)
+    }
+    
     func test_signUp_should_show_loading_before_and_after_addAccount() {
         let loadingViewSpy = LoadingViewSpy()
         let addAccountSpy = AddAccountSpy()
@@ -171,6 +185,10 @@ extension SignUpPresenterTests {
         AlertViewModel(title: "Erro", message: message)
     }
     
+    func makeSuccessAlertViewModel(message: String) -> AlertViewModel {
+        AlertViewModel(title: "Sucesso", message: message)
+    }
+    
     func makeRequiredAlertViewModel(fieldName: String) -> AlertViewModel {
         AlertViewModel(title: "Falha na validação", message: "O campo \(fieldName) é obrigatório")
     }
@@ -207,17 +225,21 @@ extension SignUpPresenterTests {
     }
     
     class AddAccountSpy: AddAccount {
-        
+
         var addAccountModel: AddAccountModel?
         var completion: ((Result<AccountModel, DomainError>) -> Void)?
-        
+
         func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
             self.addAccountModel = addAccountModel
             self.completion = completion
         }
-        
+
         func completionWithError() {
             completion?(.failure(.unexpected))
+        }
+    
+        func completionWithAccount(account: AccountModel) {
+            completion?(.success(account))
         }
     }
     
