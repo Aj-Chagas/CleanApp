@@ -68,5 +68,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B2833A2-9C74-483D-9C4F-99228090D696"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UITests/SignUpViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "simulate(event:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E50F7AEA-6319-45FB-AB1E-616C24FAD772"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UITests/SignUpViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "simulateTap()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9692712E-BA66-4F4F-85BB-EC1D8D1F2054"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UITests/SignUpViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "simulate(event:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9692712E-BA66-4F4F-85BB-EC1D8D1F2054 - 29e09710e3f296b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.AnyHashable) -&gt; () in (extension in UITests):__C.UIControl.simulate(event: __C.UIControlEvents) -&gt; ()"
+                  moduleName = "UITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andersonchagas/Documents/projetos-ios/CleanApp/UITests/SignUpViewControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "63">
+               </Location>
+               <Location
+                  uuid = "9692712E-BA66-4F4F-85BB-EC1D8D1F2054 - 879bb54a06cbd3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #1 (Swift.AnyHashable) -&gt; () in (extension in UITests):__C.UIControl.simulate(event: __C.UIControlEvents) -&gt; ()"
+                  moduleName = "UITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andersonchagas/Documents/projetos-ios/CleanApp/UITests/SignUpViewControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
