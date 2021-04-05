@@ -18,9 +18,15 @@ class SignUpViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.loadingIndicator?.isAnimating, false)
     }
+
     func test_sut_implements_loadingView_Protocol() {
         let sut = makeSut()
         XCTAssertNotNil(sut as LoadingView)
+    }
+    
+    func test_sut_implements_AlertView_Protocol() {
+        let sut = makeSut()
+        XCTAssertNotNil(sut as AlertView)
     }
 
 }
