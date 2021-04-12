@@ -385,7 +385,6 @@
 			isa = PBXGroup;
 			children = (
 				B4777AFC2625056C0007367B /* Scenes */,
-				B41ECA99261B9EAA00348DD3 /* SignUpViewControllerTests.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -401,6 +400,7 @@
 		B4777AFC2625056C0007367B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B41ECA99261B9EAA00348DD3 /* SignUpViewControllerTests.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
