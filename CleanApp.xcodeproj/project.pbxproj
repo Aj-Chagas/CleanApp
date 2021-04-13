@@ -22,6 +22,8 @@
 		B41ECB43261BC03600348DD3 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FA686A26039CEA00804361 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B41FB03325CB764300C81028 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FB03225CB764300C81028 /* DataExtensions.swift */; };
 		B4777AFF262505F80007367B /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777AFE262505F80007367B /* TestExtensions.swift */; };
+		B4777B1426251D1F0007367B /* UiViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777B1326251D1F0007367B /* UiViewControllerExtensions.swift */; };
+		B4777B1C262522D70007367B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777B1B262522D70007367B /* Storyboarded.swift */; };
 		B4A5F80725CCB84A000087EC /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80625CCB84A000087EC /* TestExtensions.swift */; };
 		B4A5F80E25CCB91A000087EC /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80D25CCB91A000087EC /* HttpClientSpy.swift */; };
 		B4A5F81825CCBA1B000087EC /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F81725CCBA1B000087EC /* TestFactories.swift */; };
@@ -203,6 +205,8 @@
 		B41ECB2B261BBE2600348DD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B41FB03225CB764300C81028 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		B4777AFE262505F80007367B /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		B4777B1326251D1F0007367B /* UiViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExtensions.swift; sourceTree = "<group>"; };
+		B4777B1B262522D70007367B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		B4A5F80625CCB84A000087EC /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		B4A5F80D25CCB91A000087EC /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
 		B4A5F81725CCBA1B000087EC /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 		B41ECA8D261B9EAA00348DD3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B4777B1226251CDA0007367B /* Helpers */,
 				B4777AF5262505630007367B /* Scenes */,
 				B41ECA8F261B9EAA00348DD3 /* Info.plist */,
 			);
@@ -409,6 +414,15 @@
 			isa = PBXGroup;
 			children = (
 				B4777AFE262505F80007367B /* TestExtensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B4777B1226251CDA0007367B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B4777B1326251D1F0007367B /* UiViewControllerExtensions.swift */,
+				B4777B1B262522D70007367B /* Storyboarded.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1081,7 +1095,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4777B1426251D1F0007367B /* UiViewControllerExtensions.swift in Sources */,
 				B41ECB2C261BBE2600348DD3 /* SignUpViewController.swift in Sources */,
+				B4777B1C262522D70007367B /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
