@@ -33,6 +33,19 @@
 		B49BFAD62649F43F00B13574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49BFAD52649F43F00B13574 /* SceneDelegate.swift */; };
 		B49BFADD2649F44200B13574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49BFADC2649F44200B13574 /* Assets.xcassets */; };
 		B49BFAE02649F44200B13574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49BFADE2649F44200B13574 /* LaunchScreen.storyboard */; };
+		B49BFB562649F6E600B13574 /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49BFB552649F6E600B13574 /* SignUpFactory.swift */; };
+		B49BFBC32649F87400B13574 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3296250DF03B00C725A8 /* Data.framework */; };
+		B49BFBC42649F87400B13574 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3296250DF03B00C725A8 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B49BFBC72649F87400B13574 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3276250DED0200C725A8 /* Domain.framework */; };
+		B49BFBC82649F87400B13574 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3276250DED0200C725A8 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B49BFBCB2649F87400B13574 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A5F82825CF2988000087EC /* Infra.framework */; };
+		B49BFBCC2649F87400B13574 /* Infra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4A5F82825CF2988000087EC /* Infra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B49BFBCF2649F87400B13574 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FA686A26039CEA00804361 /* Presentation.framework */; };
+		B49BFBD02649F87400B13574 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FA686A26039CEA00804361 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B49BFBD32649F87400B13574 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41ECA8C261B9EAA00348DD3 /* UI.framework */; };
+		B49BFBD42649F87400B13574 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B41ECA8C261B9EAA00348DD3 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B49BFBD72649F87400B13574 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4777B3426252A560007367B /* Validation.framework */; };
+		B49BFBD82649F87400B13574 /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4777B3426252A560007367B /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4A5F80725CCB84A000087EC /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80625CCB84A000087EC /* TestExtensions.swift */; };
 		B4A5F80E25CCB91A000087EC /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80D25CCB91A000087EC /* HttpClientSpy.swift */; };
 		B4A5F81825CCBA1B000087EC /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F81725CCBA1B000087EC /* TestFactories.swift */; };
@@ -136,6 +149,48 @@
 			remoteGlobalIDString = B49BFAD02649F43F00B13574;
 			remoteInfo = Main;
 		};
+		B49BFBC52649F87400B13574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4FC325D250DECB100C725A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4FC3295250DF03B00C725A8;
+			remoteInfo = Data;
+		};
+		B49BFBC92649F87400B13574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4FC325D250DECB100C725A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4FC3275250DED0200C725A8;
+			remoteInfo = Domain;
+		};
+		B49BFBCD2649F87400B13574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4FC325D250DECB100C725A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4A5F82725CF2988000087EC;
+			remoteInfo = Infra;
+		};
+		B49BFBD12649F87400B13574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4FC325D250DECB100C725A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4FA686926039CEA00804361;
+			remoteInfo = Presentation;
+		};
+		B49BFBD52649F87400B13574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4FC325D250DECB100C725A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B41ECA8B261B9EAA00348DD3;
+			remoteInfo = UI;
+		};
+		B49BFBD92649F87400B13574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4FC325D250DECB100C725A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4777B3326252A560007367B;
+			remoteInfo = Validation;
+		};
 		B4A5F83225CF2988000087EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B4FC325D250DECB100C725A8 /* Project object */;
@@ -207,6 +262,22 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B49BFBDB2649F87400B13574 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B49BFBC82649F87400B13574 /* Domain.framework in Embed Frameworks */,
+				B49BFBD42649F87400B13574 /* UI.framework in Embed Frameworks */,
+				B49BFBC42649F87400B13574 /* Data.framework in Embed Frameworks */,
+				B49BFBD82649F87400B13574 /* Validation.framework in Embed Frameworks */,
+				B49BFBD02649F87400B13574 /* Presentation.framework in Embed Frameworks */,
+				B49BFBCC2649F87400B13574 /* Infra.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4A5F84725CF298E000087EC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,6 +333,7 @@
 		B49BFAE12649F44200B13574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B49BFAE62649F44200B13574 /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49BFAEC2649F44200B13574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B49BFB552649F6E600B13574 /* SignUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFactory.swift; sourceTree = "<group>"; };
 		B4A5F80625CCB84A000087EC /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		B4A5F80D25CCB91A000087EC /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
 		B4A5F81725CCBA1B000087EC /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
@@ -348,6 +420,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49BFBC72649F87400B13574 /* Domain.framework in Frameworks */,
+				B49BFBD32649F87400B13574 /* UI.framework in Frameworks */,
+				B49BFBC32649F87400B13574 /* Data.framework in Frameworks */,
+				B49BFBD72649F87400B13574 /* Validation.framework in Frameworks */,
+				B49BFBCF2649F87400B13574 /* Presentation.framework in Frameworks */,
+				B49BFBCB2649F87400B13574 /* Infra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +611,7 @@
 		B49BFAD22649F43F00B13574 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B49BFB532649F6C900B13574 /* Factories */,
 				B49BFAD32649F43F00B13574 /* AppDelegate.swift */,
 				B49BFAD52649F43F00B13574 /* SceneDelegate.swift */,
 				B49BFADC2649F44200B13574 /* Assets.xcassets */,
@@ -548,6 +627,14 @@
 				B49BFAEC2649F44200B13574 /* Info.plist */,
 			);
 			path = MainTests;
+			sourceTree = "<group>";
+		};
+		B49BFB532649F6C900B13574 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				B49BFB552649F6E600B13574 /* SignUpFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		B4A5F80525CCB827000087EC /* Helpers */ = {
@@ -979,10 +1066,17 @@
 				B49BFACD2649F43F00B13574 /* Sources */,
 				B49BFACE2649F43F00B13574 /* Frameworks */,
 				B49BFACF2649F43F00B13574 /* Resources */,
+				B49BFBDB2649F87400B13574 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B49BFBC62649F87400B13574 /* PBXTargetDependency */,
+				B49BFBCA2649F87400B13574 /* PBXTargetDependency */,
+				B49BFBCE2649F87400B13574 /* PBXTargetDependency */,
+				B49BFBD22649F87400B13574 /* PBXTargetDependency */,
+				B49BFBD62649F87400B13574 /* PBXTargetDependency */,
+				B49BFBDA2649F87400B13574 /* PBXTargetDependency */,
 			);
 			name = Main;
 			productName = Main;
@@ -1391,6 +1485,7 @@
 			files = (
 				B49BFAD42649F43F00B13574 /* AppDelegate.swift in Sources */,
 				B49BFAD62649F43F00B13574 /* SceneDelegate.swift in Sources */,
+				B49BFB562649F6E600B13574 /* SignUpFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1531,6 +1626,36 @@
 			target = B49BFAD02649F43F00B13574 /* Main */;
 			targetProxy = B49BFAE72649F44200B13574 /* PBXContainerItemProxy */;
 		};
+		B49BFBC62649F87400B13574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4FC3295250DF03B00C725A8 /* Data */;
+			targetProxy = B49BFBC52649F87400B13574 /* PBXContainerItemProxy */;
+		};
+		B49BFBCA2649F87400B13574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4FC3275250DED0200C725A8 /* Domain */;
+			targetProxy = B49BFBC92649F87400B13574 /* PBXContainerItemProxy */;
+		};
+		B49BFBCE2649F87400B13574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4A5F82725CF2988000087EC /* Infra */;
+			targetProxy = B49BFBCD2649F87400B13574 /* PBXContainerItemProxy */;
+		};
+		B49BFBD22649F87400B13574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4FA686926039CEA00804361 /* Presentation */;
+			targetProxy = B49BFBD12649F87400B13574 /* PBXContainerItemProxy */;
+		};
+		B49BFBD62649F87400B13574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B41ECA8B261B9EAA00348DD3 /* UI */;
+			targetProxy = B49BFBD52649F87400B13574 /* PBXContainerItemProxy */;
+		};
+		B49BFBDA2649F87400B13574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4777B3326252A560007367B /* Validation */;
+			targetProxy = B49BFBD92649F87400B13574 /* PBXContainerItemProxy */;
+		};
 		B4A5F83325CF2988000087EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B4A5F82725CF2988000087EC /* Infra */;
@@ -1578,6 +1703,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = UseCasesIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1600,6 +1726,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = UseCasesIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1627,6 +1754,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = UI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1637,7 +1765,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1656,6 +1784,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = UI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1666,7 +1795,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1679,6 +1808,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1701,6 +1831,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1728,6 +1859,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Validation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1757,6 +1889,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Validation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1780,6 +1913,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = ValidationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1802,6 +1936,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = ValidationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1914,6 +2049,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Infra/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1944,6 +2080,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Infra/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1968,6 +2105,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = InfraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1991,6 +2129,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = InfraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2019,6 +2158,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Presentation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2049,6 +2189,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Presentation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2073,6 +2214,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = PresentationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2096,6 +2238,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = PresentationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2245,6 +2388,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2274,6 +2418,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2303,6 +2448,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Data/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2333,6 +2479,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Data/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2356,6 +2503,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = DataTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2378,6 +2526,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TA48V9TKT7;
 				INFOPLIST_FILE = DataTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
