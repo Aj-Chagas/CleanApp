@@ -9,17 +9,13 @@
 import UIKit
 import UI
 import Presentation
-import Data
-import Infra
 import Validation
+import Domain
 
-class SignUpFactory {
-    static func makeController() -> SignUpViewController {
+final class ControllerFactory {
+    static func makeSignUp(addAccount: AddAccount) -> SignUpViewController {
         let controller = SignUpViewController.instantiate()
         let emailValidatorAdapter = EmailValidatorAdapter()
-        let httpClient = AlamofireAdapter()
-        let addAccount = RemoteAddAccount(url: URL(string: "https://clean-node-api.herokuapp.com/api/signup")!, httpClient: httpClient)
-        
         let presenter = SignUpPresenter(alertView: controller,
                                         emailValidator: emailValidatorAdapter,
                                         addAccount: addAccount,
@@ -28,3 +24,5 @@ class SignUpFactory {
         return controller
     }
 }
+
+

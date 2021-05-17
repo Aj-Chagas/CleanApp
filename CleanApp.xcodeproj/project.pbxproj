@@ -21,6 +21,8 @@
 		B41ECB42261BC03600348DD3 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FA686A26039CEA00804361 /* Presentation.framework */; };
 		B41ECB43261BC03600348DD3 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FA686A26039CEA00804361 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B41FB03325CB764300C81028 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FB03225CB764300C81028 /* DataExtensions.swift */; };
+		B42ACE1A2653199A00B0B92E /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ACE192653199A00B0B92E /* UseCaseFactory.swift */; };
+		B42ACE2526531ABF00B0B92E /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ACE2426531ABF00B0B92E /* SignUpComposer.swift */; };
 		B467193A2627C58900377E27 /* EmailValidatorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46719392627C58900377E27 /* EmailValidatorAdapter.swift */; };
 		B4777AFF262505F80007367B /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777AFE262505F80007367B /* TestExtensions.swift */; };
 		B4777B1426251D1F0007367B /* UiViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777B1326251D1F0007367B /* UiViewControllerExtensions.swift */; };
@@ -316,6 +318,8 @@
 		B41ECB22261BBDEA00348DD3 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		B41ECB2B261BBE2600348DD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B41FB03225CB764300C81028 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
+		B42ACE192653199A00B0B92E /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		B42ACE2426531ABF00B0B92E /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
 		B46719392627C58900377E27 /* EmailValidatorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapter.swift; sourceTree = "<group>"; };
 		B4777AFE262505F80007367B /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		B4777B1326251D1F0007367B /* UiViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -540,6 +544,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		B42ACE2326531A9C00B0B92E /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				B42ACE2426531ABF00B0B92E /* SignUpComposer.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
 		B4777AE1262505300007367B /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +623,7 @@
 		B49BFAD22649F43F00B13574 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B42ACE2326531A9C00B0B92E /* Composers */,
 				B49BFB532649F6C900B13574 /* Factories */,
 				B49BFAD32649F43F00B13574 /* AppDelegate.swift */,
 				B49BFAD52649F43F00B13574 /* SceneDelegate.swift */,
@@ -633,6 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				B49BFB552649F6E600B13574 /* SignUpFactory.swift */,
+				B42ACE192653199A00B0B92E /* UseCaseFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1483,9 +1497,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B42ACE1A2653199A00B0B92E /* UseCaseFactory.swift in Sources */,
 				B49BFAD42649F43F00B13574 /* AppDelegate.swift in Sources */,
 				B49BFAD62649F43F00B13574 /* SceneDelegate.swift in Sources */,
 				B49BFB562649F6E600B13574 /* SignUpFactory.swift in Sources */,
+				B42ACE2526531ABF00B0B92E /* SignUpComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
