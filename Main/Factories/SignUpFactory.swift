@@ -12,17 +12,15 @@ import Presentation
 import Validation
 import Domain
 
-final class ControllerFactory {
-    static func makeSignUp(addAccount: AddAccount) -> SignUpViewController {
+public final class ControllerFactory {
+    public static func makeSignUp(addAccount: AddAccount) -> SignUpViewController {
         let controller = SignUpViewController.instantiate()
         let emailValidatorAdapter = EmailValidatorAdapter()
-        let presenter = SignUpPresenter(alertView: controller,
+        let presenter = SignUpPresenter(alertView: WeakProxy(controller),
                                         emailValidator: emailValidatorAdapter,
                                         addAccount: addAccount,
-                                        loadingView: controller)
+                                        loadingView: WeakProxy(controller))
         controller.signUp = presenter.signUp
         return controller
     }
 }
-
-

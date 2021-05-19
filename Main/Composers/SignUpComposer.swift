@@ -10,8 +10,8 @@ import Foundation
 import Domain
 import UI
 
-final class SignComposer {
-    static func composeControllerWith(addAccount: AddAccount) -> SignUpViewController {
+public final class SignUpComposer {
+    public static func composeControllerWith(addAccount: AddAccount) -> SignUpViewController {
         return ControllerFactory.makeSignUp(addAccount: addAccount)
     }
 }
