@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 import Main
 
-class SignUpIntegrationTest: XCTestCase {
+class SignUpComposerTests: XCTestCase {
     func test_ui_presentation_integration() {
         debugPrint(Environment.variable(.apiBaseUrl))
         let sut = SignUpComposer.composeControllerWith(addAccount: AddAccountSpy())
