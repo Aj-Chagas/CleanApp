@@ -62,6 +62,7 @@
 		B4A5F84425CF298E000087EC /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4FC3296250DF03B00C725A8 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4A5F84825CF299D000087EC /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F81725CCBA1B000087EC /* TestFactories.swift */; };
 		B4A5F85425CF2AA6000087EC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4A5F85325CF2AA6000087EC /* Alamofire */; };
+		B4A7C4CB269A129F005B6FC1 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7C4CA269A129F005B6FC1 /* MainQueueDispatchDecorator.swift */; };
 		B4BE2A4F265577310089FCE8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BE2A4E265577310089FCE8 /* Environment.swift */; };
 		B4BF0F7F25D5F1820036E842 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80625CCB84A000087EC /* TestExtensions.swift */; };
 		B4D0F703256334AF0071785A /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0F702256334AF0071785A /* DomainError.swift */; };
@@ -353,6 +354,7 @@
 		B4A5F83025CF2988000087EC /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A5F83525CF2988000087EC /* AlamofireAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTest.swift; sourceTree = "<group>"; };
 		B4A5F83725CF2988000087EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4A7C4CA269A129F005B6FC1 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		B4BE2A4C265574010089FCE8 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		B4BE2A4D265574290089FCE8 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		B4BE2A4E265577310089FCE8 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -648,6 +650,7 @@
 		B49BFAD22649F43F00B13574 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B4A7C4C9269A1272005B6FC1 /* Decorators */,
 				B4BE2A4B265573310089FCE8 /* Env */,
 				B42ACE8A265329E600B0B92E /* Proxies */,
 				B42ACE2326531A9C00B0B92E /* Composers */,
@@ -712,6 +715,14 @@
 				B4A5F83725CF2988000087EC /* Info.plist */,
 			);
 			path = InfraTests;
+			sourceTree = "<group>";
+		};
+		B4A7C4C9269A1272005B6FC1 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				B4A7C4CA269A129F005B6FC1 /* MainQueueDispatchDecorator.swift */,
+			);
+			path = Decorators;
 			sourceTree = "<group>";
 		};
 		B4BE2A4B265573310089FCE8 /* Env */ = {
@@ -1536,6 +1547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42ACE8C265329F400B0B92E /* WeakProxy.swift in Sources */,
+				B4A7C4CB269A129F005B6FC1 /* MainQueueDispatchDecorator.swift in Sources */,
 				B4BE2A4F265577310089FCE8 /* Environment.swift in Sources */,
 				B42ACE1A2653199A00B0B92E /* UseCaseFactory.swift in Sources */,
 				B49BFAD42649F43F00B13574 /* AppDelegate.swift in Sources */,
