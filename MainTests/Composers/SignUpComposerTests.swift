@@ -6,14 +6,30 @@
 //  Copyright © 2021 Anderson Chagas. All rights reserved.
 //
 
-import Foundation
 import XCTest
 import Main
+import UI
 
 class SignUpComposerTests: XCTestCase {
-    func test_ui_presentation_integration() {
-        debugPrint(Environment.variable(.apiBaseUrl))
-        let sut = SignUpComposer.composeControllerWith(addAccount: AddAccountSpy())
-        checkMemoryLeak(for: sut)
+    func test_background_request_should_complete_on_main_thread() {
+        let (sut, addAccount) = makeSut()
+        sut.loadViewIfNeeded()
+        sut.signUp?(makeSignupViewModel())
+        let exp = expectation(description: "waiting")
+        DispatchQueue.global().async {
+            addAccount.completionWithError()
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
+}
+
+extension SignUpComposerTests {
+    func makeSut(file: StaticString = #filePath, line: UInt = #line) -> (sut: SignUpViewController, addAccount: AddAccountSpy) {
+        let addAccount = AddAccountSpy()
+        let sut = SignUpComposer.composeControllerWith(addAccount: MainQueueDispatchDecorator(instance: addAccount))
+        checkMemoryLeak(for: sut, file: file, line: line)
+        checkMemoryLeak(for: addAccount, file: file, line: line)
+        return (sut, addAccount)
     }
 }

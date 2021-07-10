@@ -26,7 +26,7 @@ func makeInvalidAlertViewModel(fieldName: String) -> AlertViewModel {
 }
 
 func makeSignupViewModel(name: String? = "any_name",
-                         email: String? = "any_email",
+                         email: String? = "any_email@email.com",
                          password: String? = "any_password",
                          passwordConfirmation: String? = "any_password") -> SignUpViewModel {
     SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)

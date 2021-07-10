@@ -28,6 +28,7 @@
 		B42ACE492653207800B0B92E /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D81D0726150CC300D8E6FE /* AddAccountSpy.swift */; };
 		B42ACE8C265329F400B0B92E /* WeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ACE8B265329F400B0B92E /* WeakProxy.swift */; };
 		B467193A2627C58900377E27 /* EmailValidatorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46719392627C58900377E27 /* EmailValidatorAdapter.swift */; };
+		B47646A62682A7A70072C063 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D81D2126150D4000D8E6FE /* TestFactories.swift */; };
 		B4777AFF262505F80007367B /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777AFE262505F80007367B /* TestExtensions.swift */; };
 		B4777B1426251D1F0007367B /* UiViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777B1326251D1F0007367B /* UiViewControllerExtensions.swift */; };
 		B4777B1C262522D70007367B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777B1B262522D70007367B /* Storyboarded.swift */; };
@@ -1549,6 +1550,7 @@
 			files = (
 				B42ACE492653207800B0B92E /* AddAccountSpy.swift in Sources */,
 				B42ACE2F26531F8800B0B92E /* SignUpComposerTests.swift in Sources */,
+				B47646A62682A7A70072C063 /* TestFactories.swift in Sources */,
 				B42ACE402653205400B0B92E /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
