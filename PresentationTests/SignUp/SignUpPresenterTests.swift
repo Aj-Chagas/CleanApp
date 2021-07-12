@@ -17,7 +17,7 @@ class SignUpPresenterTests: XCTestCase {
         let sut = makeSut(addAccountSpy: addAccountSpy)
         sut.signUp(viewModel: makeSignupViewModel())
         XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel())
-    }
+    } 
 
     func test_signUp_should_show_error_message_if_addAccount_fails() {
         let alertViewSpy = AlertViewSpy()
