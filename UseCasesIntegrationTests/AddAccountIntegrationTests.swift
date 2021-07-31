@@ -17,7 +17,10 @@ class AddAccountIntegrationTests: XCTestCase {
         let alamofireAdapter = AlamofireAdapter()
         let url = URL(string: "https://fordevs.herokuapp.com/api/signup")!
         let sut = RemoteAddAccount(url: url, httpClient: alamofireAdapter)
-        let addAccountModel = AddAccountModel(name: "Anderson_reis", email: "anderson128@gmail.com", password: "123456", passwordConfirmation: "123456")
+        let email = "\(UUID().uuidString)@gmail.com"
+        let addAccountModel = AddAccountModel(name: "Anderson_reis", email: email, password: "123456", passwordConfirmation: "123456")
+        
+        // signup with a valid email
         let exp = expectation(description: "waiting")
         sut.add(addAccountModel: addAccountModel) { result in
             switch result {
@@ -28,6 +31,25 @@ class AddAccountIntegrationTests: XCTestCase {
             exp.fulfill()
         }
         wait(for: [exp], timeout: 5)
+        
+        // try signup with an email already used.
+        
+        let exp2 = expectation(description: "waiting")
+        sut.add(addAccountModel: addAccountModel) { result in
+            switch result {
+            case .failure(let error):
+                switch error {
+                case .emailInUse:
+                    XCTAssertNotNil(error)
+                default:
+                    XCTFail("Expect failure of type email in use got \(result) instead")
+                }
+            case .success:
+                XCTFail("Expect failure got \(result) instead")
+            }
+            exp2.fulfill()
+        }
+        wait(for: [exp2], timeout: 5)
     }
 
 }
