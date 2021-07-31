@@ -29,7 +29,13 @@ public final class RemoteAddAccount: AddAccount {
                 } else {
                     completion(.failure(.unexpected))
                 }
-            case .failure: completion(.failure(.unexpected))
+            case .failure(let error):
+                switch error {
+                case .forbideen:
+                    completion(.failure(.emailInUse))
+                default:
+                    completion(.failure(.unexpected))
+                }
             }
         }
     }
