@@ -19,8 +19,8 @@ class AddAccountSpy: AddAccount {
         self.completion = completion
     }
 
-    func completionWithError() {
-        completion?(.failure(.unexpected))
+    func completionError(with errorType: DomainError = .unexpected) {
+        completion?(.failure(errorType))
     }
 
     func completionWithAccount(account: AccountModel) {

@@ -18,7 +18,7 @@ class SignUpComposerTests: XCTestCase {
         sut.signUp?(makeSignupViewModel())
         let exp = expectation(description: "waiting")
         DispatchQueue.global().async {
-            addAccount.completionWithError()
+            addAccount.completionError()
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)
