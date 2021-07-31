@@ -10,8 +10,11 @@ import Foundation
 
 public struct AccountModel: Model {
     public var accessToken: String
+    public var name: String
 
-    public init(accessToken: String) {
+    public init(accessToken: String,
+                name: String) {
         self.accessToken = accessToken
+        self.name = name
     }
 }
