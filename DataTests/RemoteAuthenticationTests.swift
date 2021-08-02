@@ -41,6 +41,14 @@ class RemoteAuthenticationTests: XCTestCase {
             httpClientSpy.completionWithError(.unauthorized)
         })
     }
+
+    func test_auth_should_complete_with_success_if_client_completes_with_valid_data() {
+        let (sut, httpClientSpy) = makeSut()
+        let expectedAccount = makeAccountModel()
+        expect(sut, expectedResult: .success(expectedAccount), when: {
+            httpClientSpy.completionWithData(expectedAccount.toData()!)
+        })
+    }
 }
 
 extension RemoteAuthenticationTests {
