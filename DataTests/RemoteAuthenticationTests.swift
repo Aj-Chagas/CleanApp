@@ -49,6 +49,13 @@ class RemoteAuthenticationTests: XCTestCase {
             httpClientSpy.completionWithData(expectedAccount.toData()!)
         })
     }
+
+    func test_add_should_complete_with_error_if_client_completes_with_invalid_data() {
+        let (sut, httpClientSpy) = makeSut()
+        expect(sut, expectedResult: .failure(.unexpected), when: {
+            httpClientSpy.completionWithData(makeInvalidData())
+        })
+    }
 }
 
 extension RemoteAuthenticationTests {
