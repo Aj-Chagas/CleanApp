@@ -40,6 +40,7 @@
 		B476D62C26B6E0E100B50B89 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B476D62B26B6E0E100B50B89 /* Color.swift */; };
 		B476D63726B6E43F00B50B89 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B476D63626B6E43F00B50B89 /* NavigationController.swift */; };
 		B476D64126B6E51F00B50B89 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B476D64026B6E51F00B50B89 /* RoundedTextField.swift */; };
+		B476D64B26B8423F00B50B89 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B476D64A26B8423F00B50B89 /* Authentication.swift */; };
 		B4777AFF262505F80007367B /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777AFE262505F80007367B /* TestExtensions.swift */; };
 		B4777B1426251D1F0007367B /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777B1326251D1F0007367B /* UIViewControllerExtensions.swift */; };
 		B4777B1C262522D70007367B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4777B1B262522D70007367B /* Storyboarded.swift */; };
@@ -369,6 +370,7 @@
 		B476D62B26B6E0E100B50B89 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B476D63626B6E43F00B50B89 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		B476D64026B6E51F00B50B89 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		B476D64A26B8423F00B50B89 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		B4777AFE262505F80007367B /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		B4777B1326251D1F0007367B /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		B4777B1B262522D70007367B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -1087,6 +1089,7 @@
 			isa = PBXGroup;
 			children = (
 				B4FC3280250DEE2700C725A8 /* AddAccount.swift */,
+				B476D64A26B8423F00B50B89 /* Authentication.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1793,6 +1796,7 @@
 				B4FC32B8250E665B00C725A8 /* Model.swift in Sources */,
 				B4FC3281250DEE2700C725A8 /* AddAccount.swift in Sources */,
 				B4D0F703256334AF0071785A /* DomainError.swift in Sources */,
+				B476D64B26B8423F00B50B89 /* Authentication.swift in Sources */,
 				B4FC3283250DEF7400C725A8 /* AccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
