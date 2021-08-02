@@ -19,7 +19,18 @@ public final class RemoteAuthentication {
         self.httpClient = httpClient
     }
     
-    public func auth(authenticationModel: AuthenticationModel) {
-        httpClient.post(to: url, with: authenticationModel.toData(), completion: { _ in })
+    public func auth(authenticationModel: AuthenticationModel, completion: @escaping (Authentication.Result) -> Void) {
+        httpClient.post(to: url, with: authenticationModel.toData()) { result in
+            switch result {
+            case .success: break
+            case .failure(let error):
+                switch error {
+                case .unauthorized:
+                    completion(.failure(.expiredSession))
+                default:
+                    completion(.failure(.unexpected))
+                }
+            }
+        }
     }
 }
