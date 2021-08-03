@@ -15,3 +15,8 @@ func makeSignupViewModel(name: String? = "any_name",
                          passwordConfirmation: String? = "any_password") -> SignUpViewModel {
     SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
 }
+
+func makeLoginViewModel(email: String? = "any_email@email.com",
+                        password: String? = "any_password") -> LoginViewModel {
+    LoginViewModel(email: email, password: password)
+}
