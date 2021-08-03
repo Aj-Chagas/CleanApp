@@ -18,5 +18,5 @@ func makeAddAccountModel() -> AddAccountModel {
 }
 
 func makeAuthenticationModel() -> AuthenticationModel {
-    AuthenticationModel(email: "any_email@gmail.com", password: "any_password")
+    AuthenticationModel(email: "any_email@email.com", password: "any_password")
 }

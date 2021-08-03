@@ -73,6 +73,7 @@
 		B49CB59426B98E8B00882181 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49CB59326B98E8B00882181 /* LoginPresenter.swift */; };
 		B49CB5A726B98F5100882181 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49CB5A626B98F5100882181 /* LoginViewModel.swift */; };
 		B49CB5FD26B993B500882181 /* EmailValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D81D1426150D0300D8E6FE /* EmailValidatorSpy.swift */; };
+		B49CB60726B9984400882181 /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49CB60626B9984400882181 /* AuthenticationSpy.swift */; };
 		B4A5F80725CCB84A000087EC /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80625CCB84A000087EC /* TestExtensions.swift */; };
 		B4A5F80E25CCB91A000087EC /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F80D25CCB91A000087EC /* HttpClientSpy.swift */; };
 		B4A5F81825CCBA1B000087EC /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F81725CCBA1B000087EC /* TestFactories.swift */; };
@@ -401,6 +402,7 @@
 		B49CB58126B98E1900882181 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		B49CB59326B98E8B00882181 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		B49CB5A626B98F5100882181 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B49CB60626B9984400882181 /* AuthenticationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSpy.swift; sourceTree = "<group>"; };
 		B4A5F80625CCB84A000087EC /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		B4A5F80D25CCB91A000087EC /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
 		B4A5F81725CCBA1B000087EC /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
@@ -950,6 +952,7 @@
 			isa = PBXGroup;
 			children = (
 				B4D81D0726150CC300D8E6FE /* AddAccountSpy.swift */,
+				B49CB60626B9984400882181 /* AuthenticationSpy.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1825,6 +1828,7 @@
 				B4D81D0026150C6600D8E6FE /* LoadingView.swift in Sources */,
 				B4A7C501269A3DF6005B6FC1 /* ValidationSpy.swift in Sources */,
 				B4D81D2226150D4000D8E6FE /* TestFactories.swift in Sources */,
+				B49CB60726B9984400882181 /* AuthenticationSpy.swift in Sources */,
 				B4FA687826039CEA00804361 /* SignUpPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
