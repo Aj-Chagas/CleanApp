@@ -19,7 +19,7 @@ class AuthenticationSpy: Authentication {
         self.completion = completion
     }
 
-    func completionWithError(errorType: DomainError = .unexpected) {
+    func completionWithError(_ errorType: DomainError = .unexpected) {
         completion?(.failure(errorType))
     }
 

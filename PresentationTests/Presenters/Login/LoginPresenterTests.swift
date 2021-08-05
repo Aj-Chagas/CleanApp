@@ -55,6 +55,20 @@ class LoginPresenterTests: XCTestCase {
         authentication.completionWithError()
         wait(for: [exp], timeout: 1)
     }
+
+    func test_login_should_show_error_message_if_authentication_fails_completes_with_expired_session_error() {
+        let authentication = AuthenticationSpy()
+        let alertView = AlertViewSpy()
+        let sut = makeSut(alertView: alertView, authentication: authentication)
+        let exp = expectation(description: "waiting")
+        alertView.observer { viewModel in
+            XCTAssertEqual(viewModel, AlertViewModel(title: "Erro", message: "Email e/ou senha inválido(s)."))
+            exp.fulfill()
+        }
+        sut.login(viewModel: makeLoginViewModel())
+        authentication.completionWithError(.expiredSession)
+        wait(for: [exp], timeout: 1)
+    }
 }
 
 extension LoginPresenterTests {
