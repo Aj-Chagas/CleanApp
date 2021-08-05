@@ -41,6 +41,20 @@ class LoginPresenterTests: XCTestCase {
         sut.login(viewModel: makeLoginViewModel())
         XCTAssertEqual(authentication.authenticationModel, makeAuthenticationModel())
     }
+
+    func test_login_should_show_generic_error_message_if_authentication_fails() {
+        let authentication = AuthenticationSpy()
+        let alertView = AlertViewSpy()
+        let sut = makeSut(alertView: alertView, authentication: authentication)
+        let exp = expectation(description: "waiting")
+        alertView.observer { viewModel in
+            XCTAssertEqual(viewModel, AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente em alguns instantes."))
+            exp.fulfill()
+        }
+        sut.login(viewModel: makeLoginViewModel())
+        authentication.completionWithError()
+        wait(for: [exp], timeout: 1)
+    }
 }
 
 extension LoginPresenterTests {
