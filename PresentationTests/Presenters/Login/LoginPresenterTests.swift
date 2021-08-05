@@ -83,14 +83,41 @@ class LoginPresenterTests: XCTestCase {
         authentication.completionSucceds(with: makeAuthenticationModel())
         wait(for: [exp], timeout: 1)
     }
+
+    func test_login_should_show_loading_before_and_after_authentication() {
+        let loadingViewSpy = LoadingViewSpy()
+        let authentication = AuthenticationSpy()
+        let sut = makeSut(authentication: authentication, loadingView: loadingViewSpy)
+        
+        XCTContext.runActivity(named: "before calls addAccount isLoading should be true") { _ in
+            let exp = expectation(description: "waiting")
+            loadingViewSpy.observer { viewModel in
+                XCTAssertEqual(viewModel, LoadingViewModel(isLoading: true))
+                exp.fulfill()
+            }
+            sut.login(viewModel: makeLoginViewModel())
+            wait(for: [exp], timeout: 1)
+        }
+
+        XCTContext.runActivity(named: "after calls addAccount isLoading should be false") { _ in
+            let exp1 = expectation(description: "waiting")
+            loadingViewSpy.observer { viewModel in
+                XCTAssertEqual(viewModel, LoadingViewModel(isLoading: false))
+                exp1.fulfill()
+            }
+            authentication.completionWithError()
+            wait(for: [exp1], timeout: 1)
+        }
+    }
 }
 
 extension LoginPresenterTests {
     func makeSut(validation: Validation = ValidationSpy(),
                  alertView: AlertView = AlertViewSpy(),
                  authentication: Authentication = AuthenticationSpy(),
+                 loadingView: LoadingView = LoadingViewSpy(),
                  file: StaticString = #filePath, line: UInt = #line) -> LoginPresenter {
-        let sut = LoginPresenter(validation: validation, alertView: alertView, authentication: authentication)
+        let sut = LoginPresenter(validation: validation, alertView: alertView, authentication: authentication, loadingView: loadingView)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut
     }
