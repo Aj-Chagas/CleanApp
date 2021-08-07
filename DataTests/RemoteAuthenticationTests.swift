@@ -44,7 +44,7 @@ class RemoteAuthenticationTests: XCTestCase {
 
     func test_auth_should_complete_with_success_if_client_completes_with_valid_data() {
         let (sut, httpClientSpy) = makeSut()
-        let expectedAccount = makeAccountModel()
+        let expectedAccount = makeAuthenticationModel()
         expect(sut, expectedResult: .success(expectedAccount), when: {
             httpClientSpy.completionWithData(expectedAccount.toData()!)
         })
@@ -60,7 +60,7 @@ class RemoteAuthenticationTests: XCTestCase {
     func test_auth_should_not_complete_if_sut_has_been_deallocated() {
         let httpClientSpy = HttpClientSpy()
         var sut: RemoteAuthentication? = RemoteAuthentication(url: makeUrl(), httpClient: httpClientSpy)
-        var result: AddAccount.Result?
+        var result: Authentication.Result?
         sut?.auth(authenticationModel: makeAuthenticationModel()) { result = $0 }
         sut = nil
         httpClientSpy.completionWithError(.noConnectivity)

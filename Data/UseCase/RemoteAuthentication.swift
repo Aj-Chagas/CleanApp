@@ -23,7 +23,7 @@ public final class RemoteAuthentication: Authentication {
             guard self != nil else { return }
             switch result {
             case .success(let data):
-                if let model: AccountModel = data?.toModel() {
+                if let model: AuthenticationModel = data?.toModel() {
                     completion(.success(model))
                 } else {
                     completion(.failure(.unexpected))
